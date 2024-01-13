@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Encryption/Decryption</title>
+    <title>Cropican task core hub</title>
 </head>
 <body>
     <script>
@@ -27,9 +27,9 @@
             for (let i = 0; i < cipher.length; i++) {
                 let char = cipher[i];
                 if (char.match(/[A-Z]/)) {
-                    result += String.fromCharCode((char.charCodeAt(0) - key - 65) % 26 + 65);
+                    result += String.fromCharCode((char.charCodeAt(0) - key + 26 - 65) % 26 + 65);
                 } else if (char.match(/[a-z]/)) {
-                    result += String.fromCharCode((char.charCodeAt(0) - key - 97) % 26 + 97);
+                    result += String.fromCharCode((char.charCodeAt(0) - key + 26 - 97) % 26 + 97);
                 } else {
                     result += char;
                 }
@@ -44,7 +44,7 @@
                 let text = prompt('Enter text:');
                 let key, result;
                 if (operation === 'Encrypt') {
-                    key = Math.floor(Math.random() * 27);
+                    key = Math.floor(Math.random() * 26);
                     result = encrypt(text, key);
                     alert('Encrypted Text: ' + result + '\nKey: ' + key);
                 } else if (operation === 'Decrypt') {
@@ -60,6 +60,6 @@
         }
     </script>
 
-    <button onclick="getPasswordAndEncrypt()">Encrypt</button>
+    <button onclick="getPasswordAndEncrypt()">Encrypt/Decrypt</button>
 </body>
 </html>
