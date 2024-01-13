@@ -12,9 +12,9 @@
             for (let i = 0; i < text.length; i++) {
                 let char = text[i];
                 if (char.match(/[A-Z]/)) {
-                    result += String.fromCharCode((char.charCodeAt(0) + parseInt(s) - 65) % 26 + 65);
+                    result += String.fromCharCode((char.charCodeAt(0) + s - 65) % 26 + 65);
                 } else if (char.match(/[a-z]/)) {
-                    result += String.fromCharCode((char.charCodeAt(0) + parseInt(s) - 97) % 26 + 97);
+                    result += String.fromCharCode((char.charCodeAt(0) + s - 97) % 26 + 97);
                 } else {
                     result += char;
                 }
@@ -37,48 +37,29 @@
             return result;
         }
 
-        function encryptAndPrint() {
-            console.log('Loading...');
-            console.log('Loading...');
-            let num = parseInt(prompt('Key: (Numerical values only)'));
-            let text = prompt('Text to be encrypted:');
-            let encrypted = encrypt(text, num);
-
-            console.log('Encrypted Text: ' + encrypted);
-            console.log('Key: ' + num);
-        }
-
-        function decryptAndPrint() {
-            console.log('Loading...');
-            console.log('Loading...');
-            let cipher = prompt('Text to be decrypted:');
-            let key = parseInt(prompt('Key:'));
-            console.log('Decrypted Text: ' + decryptWithKey(cipher, key));
-        }
-
-        let x = prompt('');
-
-        if (x === 'ENCRYPT') {
-            encryptAndPrint();
-        } else if (x === 'DECRYPT') {
-            decryptAndPrint();
-        } else if (x === '') {
-            let yz = prompt('');
-            if (yz === 'SHAARAV' || yz === 'ROOROO' || yz === 'CTF AGENT') {
-                let xhhhh = prompt('');
-                if (xhhhh === 'ENCRYPT') {
-                    let z = prompt('');
-                    let w = Math.floor(Math.random() * 27);
-                    console.log('Encrypted Text: ' + encrypt(z, w));
-                    console.log('Key: ' + w);
-                } else if (xhhhh === 'DECRYPT') {
-                    let ख = prompt('');
-                    let क = parseInt(prompt(''));
-                    console.log('Decrypted Text: ' + decryptWithKey(ख, क));
+        function getPasswordAndEncrypt() {
+            let password = prompt('Enter password:');
+            if (password === 'Cropican.Task.Force') {
+                let operation = prompt('Encrypt or Decrypt?');
+                let text = prompt('Enter text:');
+                let key, result;
+                if (operation === 'Encrypt') {
+                    key = Math.floor(Math.random() * 27);
+                    result = encrypt(text, key);
+                    alert('Encrypted Text: ' + result + '\nKey: ' + key);
+                } else if (operation === 'Decrypt') {
+                    key = parseInt(prompt('Enter key:'));
+                    result = decryptWithKey(text, key);
+                    alert('Decrypted Text: ' + result);
+                } else {
+                    alert('Invalid operation');
                 }
+            } else {
+                alert('Invalid password');
             }
         }
     </script>
+
+    <button onclick="getPasswordAndEncrypt()">Encrypt</button>
 </body>
 </html>
-
