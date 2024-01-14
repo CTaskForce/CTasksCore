@@ -1,6 +1,12 @@
 button {
     font-family: 'Courier New', Courier, monospace;
+    background-color: #006600;
+    border: none;
 }
-#title{
+.title{
     font-family:'Anton', sans-serif;
+}
+body {
+    background-color: black;
+    color: #006600;
 }
