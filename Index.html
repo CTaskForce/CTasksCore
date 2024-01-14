@@ -1,62 +1,20 @@
-<!Doctype html>
+<!DOCTYPE html>
 <html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cropican Task Foce Core Hub</title>
+    <title>Cropican Task Force Core Hub</title>
+    <link rel="stylesheet" href="main.css">
+    <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
+    <script src="script.js"></script>
 </head>
+
 <body>
-    <script>
-        function encrypt(text, s) {
-            let result = '';
-            for (let i = 0; i < text.length; i++) {
-                let char = text[i];
-                if (char.match(/[A-Z]/)) {
-                    result += String.fromCharCode((char.charCodeAt(0) + s - 65) % 26 + 65);
-                } else if (char.match(/[a-z]/)) {
-                    result += String.fromCharCode((char.charCodeAt(0) + s - 97) % 26 + 97);
-                } else {
-                    result += char;
-                }
-            }
-            return result;
-        }
-        function decryptWithKey(cipher, key) {
-            let result = '';
-            for (let i = 0; i < cipher.length; i++) {
-                let char = cipher[i];
-                if (char.match(/[A-Z]/)) {
-                    result += String.fromCharCode((char.charCodeAt(0) - key + 26 - 65) % 26 + 65);
-                } else if (char.match(/[a-z]/)) {
-                    result += String.fromCharCode((char.charCodeAt(0) - key + 26 - 97) % 26 + 97);
-                } else {
-                    result += char;
-                }
-            }
-            return result;
-        }
-        function getPasswordAndEncrypt() {
-            let password = prompt('Enter password:');
-            if (password === 'Cropican.Task.Force') {
-                let operation = prompt('Encrypt or Decrypt?');
-                let text = prompt('Enter text:');
-                let key, result;
-                if (operation === 'Encrypt') {
-                    key = Math.floor(Math.random() * 26);
-                    result = encrypt(text, key);
-                    alert('Encrypted Text: ' + result + '\nKey: ' + key);
-                } else if (operation === 'Decrypt') {
-                    key = parseInt(prompt('Enter key:'));
-                    result = decryptWithKey(text, key);
-                    alert('Decrypted Text: ' + result);
-                } else {
-                    alert('Invalid operation');
-                }
-            } else {
-                alert('Invalid password');
-            }
-        }
-    </script>
-    <button onclick="getPasswordAndEncrypt()">Encrypt/Decrypt</button>
+    <main>
+        <section>
+            <h1>Cropican Task Force Core Hub</h1>
+            <button onclick="getPasswordAndEncrypt()">Encrypt/Decrypt</button>
+        </section>
+    </main>
 </body>
+
 </html>
