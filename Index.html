@@ -1,15 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
+<!Doctype html>
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cropican Task Force Core Hub</title>
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            text-align: center;
-        }
-    </style>
+    <title>Cropican Task Foce Core Hub</title>
 </head>
 <body>
     <script>
@@ -27,7 +21,6 @@
             }
             return result;
         }
-
         function decryptWithKey(cipher, key) {
             let result = '';
             for (let i = 0; i < cipher.length; i++) {
@@ -42,130 +35,7 @@
             }
             return result;
         }
-    
-    
-        async function startGame() {
-            alert("Please remember that typing 1 means 'No', typing 2 means 'Yes', and typing 3 (if applicable) can get you a secret ending. If you type 3 and there is no secret ending, 2 will be chosen by default. Please enjoy this interactive story game by Rohan Hariharan! The game will automatically start in 10 seconds.");
-
-            await sleep(500);
-
-            alert("=______________________________________________=");
-            alert("Alex Z: Hello. My name is Alex.");
-
-            await sleep(2000);
-
-            alert("________________________________________________");
-            playername = prompt("Alex Z: What's yours? ");
-
-            alert("________________________________________________");
-            alert(playername + ": My name is " + playername + ".");
-
-            await sleep(2000);
-
-            alert("________________________________________________");
-            let q1 = parseInt(prompt("Alex Z: " + playername + ", you know you're stupid, right? "));
-
-            alert("________________________________________________");
-            await sleep(2000);
-
-            if (q1 === 1) {
-                alert(playername + ": No, I'm not.");
-                alert("________________________________________________");
-                await sleep(2000);
-                alert("Alex Z: Well, at least you tried to fend for yourself.");
-                await sleep(2000);
-                alert("________________________________________________");
-                alert("Ending Unlocked: 'Fending Fencing'");
-            }
-
-            if (q1 === 2) {
-                alert(playername + ": Yes, I am.");
-                alert("________________________________________________");
-                await sleep(2000);
-                let q2 = parseInt(prompt("Alex Z: Are you a speedrunner or something? "));
-                alert("________________________________________________");
-
-                if (q2 === 2) {
-                    alert(playername + ": Well, yes.");
-                    alert("________________________________________________");
-                    await sleep(2000);
-                    alert("Alex Z: What the heck?!");
-                    await sleep(2000);
-                    alert("________________________________________________");
-                    alert("Ending Unlocked: 'Speedrun Master'");
-                }
-
-                if (q2 === 1) {
-                    alert(playername + ": No, I'm not.");
-                    alert("________________________________________________");
-                    await sleep(2000);
-                    alert("Alex Z: Good! Last time people like those came in, bad things happened.");
-                    await sleep(2000);
-                    alert("________________________________________________");
-                    let q3 = parseInt(prompt("Alex Z: Are you playing to unlock all of the endings? There are some secret ones too. "));
-                    alert("________________________________________________");
-
-                    if (q3 === 1) {
-                        alert(playername + ": Absolutely not! I hate speedrunners.");
-                        alert("________________________________________________");
-                        await sleep(2000);
-                        alert("Alex Z: Good!");
-                        await sleep(2000);
-                        alert("________________________________________________");
-                        alert("Ending Unlocked: 'Debate Club'");
-                    }
-
-                    if (q3 === 2) {
-                        alert(playername + ": Yeah! This game seems fun.");
-                        alert("________________________________________________");
-                        await sleep(2000);
-                        alert("Alex Z: Great! Y'know, if you had said 1 instead of 2 just now, you would've gotten another ending.");
-                        await sleep(2000);
-                        alert("________________________________________________");
-                        let q4 = parseInt(prompt("Alex Z: Something's off..."));
-                        alert("________________________________________________");
-
-                        if (q4 === 1) {
-                            alert(playername + ": I don't think anything's wrong.");
-                            alert("________________________________________________");
-                            await sleep(2000);
-                            alert("Alex Z: You're right. Probably nothing.");
-                            await sleep(2000);
-                            alert("________________________________________________");
-                            let q5 = parseInt(prompt("Alex Z: Oh right! I remember! Parts of my source code are missing. To get the pieces back, we have to do a math quiz. Ready? "));
-                            alert("________________________________________________");
-
-                            if (q5 === 1) {
-                                await sleep(2000);
-                                alert("Alex Z: Jeez. Someone doesn't like math.");
-                                await sleep(2000);
-                                alert("________________________________________________");
-                                alert("Ending Unlocked: 'The Reverse Quadratic Formula'");
-                            }
-
-                            if (q5 === 2) {
-                                let answer1 = parseInt(prompt("2+3= "));
-                                let answer2 = parseInt(prompt("3^2= "));
-                                let answer3 = parseInt(prompt("x=7x-48, x= "));
-
-                                if (answer1 === 5 && answer2 === 9 && answer3 === 8) {
-                                    alert("________________________________________________");
-                                    await sleep(2000);
-                                    alert("Alex Z: Right. Well... I don't have anything else for you to do, so...");
-                                    await sleep(2000);
-                                    alert("________________________________________________");
-                                    alert("Ending Unlocked: 'The Quadratic Formula'");
-                                }
-                            }
-                        }
-
-                        if (q4 === 2) {
-                            alert(playername + ": Yeah, something feels a bit wrong here.");
-                            alert("________________________________________________");
-                            await sleep(2000);
-                            alert("Alex Z: Y̵̅̀ͅŐ̶͇͝U̵͔̐͝ ̷̧̎U̶̪̅Ṇ̶̮̍̀D̶̝̊E̵͎͗̊S̴̏͜Ṭ̵̼̓Á̶̪̤͛Ǹ̵̘̊D̸̯̯͝ ̸̳͇͂͝N̷̛͖̉O̶͓̐̊W̶͚̱͐͠.̶̝̦̒͑ ̸̺͇͛Y̸͕̎Ö̸́̉͜U̸̻͌ ̸̖̇Ẁ̵͈̗͝I̸͖͝Ĺ̴͚̋L̴͙͈͂̓ ̸̫̟̈́Ñ̶̞̦E
-
-        async function getPasswordAndEncrypt() {
+        function getPasswordAndEncrypt() {
             let password = prompt('Enter password:');
             if (password === 'Cropican.Task.Force') {
                 let operation = prompt('Encrypt or Decrypt?');
@@ -187,8 +57,6 @@
             }
         }
     </script>
-
-    <button onclick="startGame()">Start Game</button>
     <button onclick="getPasswordAndEncrypt()">Encrypt/Decrypt</button>
 </body>
 </html>
